@@ -1,69 +1,16 @@
-# Inventario de Equipos de Red — API REST
+# Evidencias de ejecución local
 
-## Descripción
-Proyecto académico original para administrar equipos de un laboratorio de redes mediante FastAPI y SQLite. Permite registrar, consultar, actualizar y eliminar routers, switches, computadoras y puntos de acceso.
+Estas imágenes se generaron a partir de una ejecución **real en un entorno local de prueba**, no en GitHub ni en la computadora del estudiante.
 
-## Objetivo
-Implementar una API REST con persistencia y validación de datos, documentar sus endpoints y comprobar sus respuestas mediante pruebas automatizadas.
+- `01_documentacion_openapi.png`: rutas extraídas del esquema real `/openapi.json`.
+- `02_servidor_operativo.png`: respuesta de `/health`.
+- `03_registro_de_equipo.png`: POST exitoso.
+- `04_registro_de_router.png`: segundo POST exitoso.
+- `05_consulta_de_equipos.png`: listado GET.
+- `06_actualizacion_de_equipo.png`: PUT.
+- `07_validacion_de_ip.png`: validación de dirección IP inválida.
+- `08_filtro_por_estado.png`: consulta filtrada.
+- `09_pruebas_automatizadas.png`: salida de Pytest.
+- `09_resultados_pytest.txt`: registro textual de pruebas.
 
-## Tecnologías
-Python, FastAPI, SQLAlchemy, SQLite, Pytest y Swagger UI.
-
-## Instalación
-```bash
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Linux/macOS: source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-
-Abrir http://127.0.0.1:8000/docs
-
-## Endpoints
-| Método | Ruta | Función |
-|---|---|---|
-| GET | /health | Estado del servicio |
-| POST | /equipos | Registrar equipo |
-| GET | /equipos | Listar equipos (filtro opcional `estado`) |
-| GET | /equipos/{equipo_id} | Consultar uno |
-| PUT | /equipos/{equipo_id} | Actualizar |
-| DELETE | /equipos/{equipo_id} | Eliminar |
-
-## Ejemplo para POST /equipos
-```json
-{
-  "nombre": "Switch Cisco 2960",
-  "tipo": "switch",
-  "ip": "192.168.28.10",
-  "ubicacion": "Laboratorio de redes - Rack A",
-  "estado": "activo"
-}
-```
-Estados admitidos: `activo`, `mantenimiento`, `inactivo`.
-
-## Pruebas
-```bash
-pytest -v
-```
-
-## Evidencias
-Consultar `evidencias/README.md` para las nueve capturas requeridas. Las capturas se añaden después de ejecutar el proyecto.
-
-## Estructura
-- `app/main.py`: endpoints y reglas HTTP.
-- `app/db.py`: conexión SQLite.
-- `app/models.py`: tabla equipos.
-- `app/schemas.py`: validación de datos.
-- `tests/test_api.py`: pruebas de operaciones y errores.
-- `evidencias/`: capturas de la práctica.
-
-## Resultados y conclusión
-Completar esta sección con los resultados observados en la ejecución real, dificultades encontradas y aprendizajes personales.
-
-## Autoría
-Nombre: [Escribe tu nombre]
-Asignatura: [Escribe tu asignatura]
-Grupo: [Escribe tu grupo]
-Fecha: [Fecha de realización]
+Para completar una entrega personal, agrega una captura de tu repositorio en GitHub y, si se requiere, una captura de tu VS Code y terminal local.
