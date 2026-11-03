@@ -1,0 +1,1 @@
+# inventario-equipos-red-fastapi
